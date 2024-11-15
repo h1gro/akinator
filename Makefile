@@ -17,8 +17,8 @@ all: tree clean
 
 #-------------------------------------------------------------------------------------------------------#
 
-tree: Main.o Constructor.o Dump.o GetWord.o
-	g++ Main.o Constructor.o Dump.o GetWord.o $(flags) -o tree
+tree: Main.o Constructor.o Dump.o GetWord.o ReadTreeFile.o
+	g++ Main.o Constructor.o Dump.o GetWord.o ReadTreeFile.o $(flags) -o tree
 
 Main.o: Main.cpp
 	g++ -c $(flags) Main.cpp
@@ -31,6 +31,9 @@ Dump.o: Dump.cpp
 
 GetWord.o: GetWord.cpp
 	g++ -c $(flags) GetWord.cpp
+
+ReadTreeFile.o: ReadTreeFile.cpp
+	g++ -c $(flags) ReadTreeFile.cpp
 
 #-------------------------------------------------------------------------------------------------------#
 

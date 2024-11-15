@@ -41,18 +41,18 @@ void PrintDefaultList(FILE* graph, struct node_t* tree)
     assert(graph);
     assert(tree);
 
-    fprintf(graph, "    %x [shape = Mrecord, label = \"{ data %4s | { <f0> left %4lu | <f1> right %4lu}}\"];\n",
+    fprintf(graph, "    %p [shape = Mrecord, label = \"{ data %4s | { <f0> left %4p | <f1> right %4p}}\"];\n",
                         tree, tree->word, tree->left, tree->right);
 
     if (tree->left != NULL)
     {
-        fprintf(graph, "    %x : <f0> -> %x\n", tree, tree->left);
+        fprintf(graph, "    %p : <f0> -> %p\n", tree, tree->left);
         PrintDefaultList(graph, tree->left);
     }
 
     if (tree->right != NULL)
     {
-        fprintf(graph, "    %x : <f1> -> %x\n", tree, tree->right);
+        fprintf(graph, "    %p : <f1> -> %p\n", tree, tree->right);
         PrintDefaultList(graph, tree->right);
     }
 }

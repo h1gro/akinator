@@ -1,0 +1,23 @@
+digraph G{
+rankdir = TB;
+bgcolor = "#ff7f50";
+node[color = "#800000", fontsize = 10];
+edge[color = "#800000", fontsize = 15];
+subgraph cluster_list {
+  node[style = filled, fontsize = 10];
+  edge[color = "#800000", fontsize = 15];
+  style = "dashed";
+  color = "#800080";
+  node0x60c0000001c0 [shape = Mrecord, style = filled, fillcolor = "#ffe4c4", color = "#800000", label = "{ PARENT: (nil) | PTR: 0x60c0000001c0 | DATA: чел | { <f0> LEFT: 0x60c000000340 | <f1> RIGHT: 0x60c000000100 }}"];
+  node0x60c000000340 [shape = Mrecord, style = filled, fillcolor = "#ffe4c4", color = "#800000", label = "{ PARENT: 0x60c0000001c0 | PTR: 0x60c000000340 | DATA: кошка | { <f0> LEFT: 0x60c000000040 | <f1> RIGHT: 0x60c000000280 }}"];
+  node0x60c000000040 [shape = Mrecord, style = filled, fillcolor = "#ffe4c4", color = "#800000", label = "{ PARENT: 0x60c000000340 | PTR: 0x60c000000040 | DATA: неизвестно кто | { <f0> LEFT: (nil) | <f1> RIGHT: (nil) }}"];
+  node0x60c000000340: <f0> -> node0x60c000000040 [color = "#000000", label = "нет"]
+  node0x60c000000280 [shape = Mrecord, style = filled, fillcolor = "#ffe4c4", color = "#800000", label = "{ PARENT: 0x60c000000340 | PTR: 0x60c000000280 | DATA: кошка | { <f0> LEFT: (nil) | <f1> RIGHT: (nil) }}"];
+  node0x60c000000340: <f1> -> node0x60c000000280 [color = "#000000", label = "да"]
+  node0x60c0000001c0: <f0> -> node0x60c000000340 [color = "#000000", label = "нет"]
+  node0x60c000000100 [shape = Mrecord, style = filled, fillcolor = "#ffe4c4", color = "#800000", label = "{ PARENT: 0x60c0000001c0 | PTR: 0x60c000000100 | DATA: вася | { <f0> LEFT: (nil) | <f1> RIGHT: (nil) }}"];
+  node0x60c0000001c0: <f1> -> node0x60c000000100 [color = "#000000", label = "да"]
+}
+All[shape = Mrecord, label = " HEADER | <f0> Root: 0x60c0000001c0 ", style = "filled", fillcolor = "#ffe4c4"];
+All:<f0> -> node0x60c0000001c0 [color = "#FFFFFF"];
+}

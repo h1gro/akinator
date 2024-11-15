@@ -5,11 +5,5 @@ digraph G
     node[color = "#b503fc", fontsize = 14];
     edge[color = black, fontsize = 12];
 
-    40 [shape = Mrecord, label = "{ data   10 | { <f0> left 105759274696816 | <f1> right 105759274696864}}"];
-    40 : <f0> -> 70
-    70 [shape = Mrecord, label = "{ data    5 | { <f0> left    0 | <f1> right    0}}"];
-    40 : <f1> -> a0
-    a0 [shape = Mrecord, label = "{ data   15 | { <f0> left    0 | <f1> right 105759274696912}}"];
-    a0 : <f1> -> d0
-    d0 [shape = Mrecord, label = "{ data   20 | { <f0> left    0 | <f1> right    0}}"];
+    0x603000000040 [shape = Mrecord, label = "{ data (null) | { <f0> left (nil) | <f1> right (nil)}}"];
 }

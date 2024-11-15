@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
 
+#include "Akinator.h"
 #include "Tree.h"
 #include "Dump.h"
 
@@ -10,14 +10,23 @@
 
 int main()
 {
+    struct file_t akin = {};
+
     node_t* root = NULL;
 
-    root = TreeCtor(root);
+    akin.file_ptr = fopen(TREE_FILE, "r");
 
-    CreateSubtree(root, "maxim");
+    assert(akin.file_ptr);
+
+    root = AkinatorCtor(root);
+
+    ReadTree(root, &akin);
+
+    CheckFclose(akin.file_ptr);
 
     TreeDump(root);
 
-    TreeDtor(root);
+    AkinatorDtor(root);
+
     return 0;
 }
