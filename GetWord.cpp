@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <string.h>
 
-#include "Tree.h"
+#include "Akinator.h"
 
 node_t* CreateSubtree(struct node_t* parent, const char* word)
 {

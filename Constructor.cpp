@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include "Tree.h"
+#include "Akinator.h"
 
 node_t* AkinatorCtor(struct node_t* root)
 {

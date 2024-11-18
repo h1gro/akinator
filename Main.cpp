@@ -2,7 +2,6 @@
 #include <assert.h>
 
 #include "Akinator.h"
-#include "Tree.h"
 #include "Dump.h"
 
 //TODO научиться давать определения по заданному слову(елементу дерева), если оно есть в дереве

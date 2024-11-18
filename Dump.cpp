@@ -2,7 +2,7 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include "Tree.h"
+#include "Akinator.h"
 #include "Dump.h"
 
 void TreeDump(struct node_t* tree)

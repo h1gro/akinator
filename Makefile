@@ -18,7 +18,7 @@ all: tree clean
 #-------------------------------------------------------------------------------------------------------#
 
 tree: Main.o Constructor.o Dump.o GetWord.o ReadTreeFile.o
-	g++ Main.o Constructor.o Dump.o GetWord.o ReadTreeFile.o $(flags) -o tree
+	g++ Main.o Constructor.o Dump.o GetWord.o ReadTreeFile.o $(flags) -o akinator
 
 Main.o: Main.cpp
 	g++ -c $(flags) Main.cpp
@@ -43,7 +43,7 @@ clean:
 #-------------------------------------------------------------------------------------------------------#
 
 run:
-	./tree && rm -rf tree
+	./akinator && rm -rf akinator
 
 #-------------------------------------------------------------------------------------------------------#
 
