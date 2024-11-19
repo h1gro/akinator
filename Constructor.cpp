@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
 
@@ -11,25 +10,28 @@ node_t* AkinatorCtor(struct node_t* root)
 
     assert(root);
 
+    //root->word  = NULL;
+    root->left  = NULL;
+    root->right = NULL;
+
     return root;
 }
 
-int AkinatorDtor(struct node_t* node)
+int AkinatorDtor(struct node_t* node, struct file_t* akin)
 {
     if(!node)
     {
         return 0;
     }
 
-    AkinatorDtor(node->left);
-    AkinatorDtor(node->right);
+    AkinatorDtor(node->left, akin);
+    AkinatorDtor(node->right, akin);
 
-    free(node);
+    free(node->word);
+    //free(node);
 
     node = NULL;
-
     return 0;
-
 }
 
 

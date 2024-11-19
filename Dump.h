@@ -1,8 +1,6 @@
 #ifndef DUMP
 #define DUMP
 
-static const char* DUMP_DOT = "Dump.dot";
-
 void TreeDump         (struct node_t* tree);
 
 void PrintGraphHead   (FILE* graph);

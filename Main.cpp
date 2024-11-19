@@ -4,6 +4,8 @@
 #include "Akinator.h"
 #include "Dump.h"
 
+static const char* TREE_FILE = "Tree.txt";
+
 //TODO научиться давать определения по заданному слову(елементу дерева), если оно есть в дереве
 //TODO уметь отличать два элемента дерева друг от друга и писать чем они отличаются и чем похожи
 
@@ -17,15 +19,26 @@ int main()
 
     assert(akin.file_ptr);
 
-    root = AkinatorCtor(root);
+    //root = AkinatorCtor(root);
 
-    ReadTree(root, &akin);
+    if (ScanFile(&akin) == SCAN_FILE_POISON)
+    {
+        return -1;
+    }
+
+    root = ReadTree(root, &akin);
 
     CheckFclose(akin.file_ptr);
 
     TreeDump(root);
 
-    AkinatorDtor(root);
+    printf("IF YOU WANT TO PLAY WITH AKINATOR WRITE \"1\", ELSE WRITE \"2\"\n");
 
+    Game(root, root);
+
+    TreeDump(root);
+
+    AkinatorDtor(root, &akin);
+    free(akin.buffer);
     return 0;
 }
