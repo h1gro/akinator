@@ -1,0 +1,67 @@
+digraph G
+{
+    rankdir = TB;
+    bgcolor = "pink2"
+    node[color = "#b503fc", fontsize = 14];
+    edge[color = black, fontsize = 12, splines = ortho];
+
+    happy_person [shape = Mrecord, label = "{ happy_person | { <f0> left 0x60c000000100 | <f1> right 0x60c000000f40}}"];
+    happy_person : <f0> -> bashkir [style = "filled"]
+    bashkir [shape = Mrecord, label = "{ bashkir | { <f0> left 0x60c0000001c0 | <f1> right 0x60c000000d00}}"];
+    bashkir : <f0> -> black [style = "filled"]
+    black [shape = Mrecord, label = "{ black | { <f0> left 0x60c000000280 | <f1> right 0x60c000000640}}"];
+    black : <f0> -> musician [style = "filled"]
+    musician [shape = Mrecord, label = "{ musician | { <f0> left 0x60c000000340 | <f1> right 0x60c000000400}}"];
+    musician : <f0> -> ilsaf [style = "filled"]
+    ilsaf [shape = Mrecord, label = "{ ilsaf | { <f0> left (nil) | <f1> right (nil)}}"];
+    musician : <f1> -> korean_girl [style = "filled"]
+    korean_girl [shape = Mrecord, label = "{ korean_girl | { <f0> left 0x60c0000004c0 | <f1> right 0x60c000000580}}"];
+    korean_girl : <f0> -> rasil [style = "filled"]
+    rasil [shape = Mrecord, label = "{ rasil | { <f0> left (nil) | <f1> right (nil)}}"];
+    korean_girl : <f1> -> renat [style = "filled"]
+    renat [shape = Mrecord, label = "{ renat | { <f0> left (nil) | <f1> right (nil)}}"];
+    black : <f1> -> bashkirs_mum [style = "filled"]
+    bashkirs_mum [shape = Mrecord, label = "{ bashkirs_mum | { <f0> left 0x60c000000700 | <f1> right 0x60c0000007c0}}"];
+    bashkirs_mum : <f0> -> fedor [style = "filled"]
+    fedor [shape = Mrecord, label = "{ fedor | { <f0> left (nil) | <f1> right (nil)}}"];
+    bashkirs_mum : <f1> -> zenit_champion [style = "filled"]
+    zenit_champion [shape = Mrecord, label = "{ zenit_champion | { <f0> left 0x60c000000880 | <f1> right 0x60c000000ac0}}"];
+    zenit_champion : <f0> ->  ann [style = "filled"]
+     ann [shape = Mrecord, label = "{  ann | { <f0> left 0x60c000000940 | <f1> right 0x60c000000a00}}"];
+     ann : <f0> -> gosha [style = "filled"]
+    gosha [shape = Mrecord, label = "{ gosha | { <f0> left (nil) | <f1> right (nil)}}"];
+     ann : <f1> ->  ann [style = "filled"]
+     ann [shape = Mrecord, label = "{  ann | { <f0> left (nil) | <f1> right (nil)}}"];
+    zenit_champion : <f1> -> the_god_of_washing_machines [style = "filled"]
+    the_god_of_washing_machines [shape = Mrecord, label = "{ the_god_of_washing_machines | { <f0> left 0x60c000000b80 | <f1> right 0x60c000000c40}}"];
+    the_god_of_washing_machines : <f0> ->  max [style = "filled"]
+     max [shape = Mrecord, label = "{  max | { <f0> left (nil) | <f1> right (nil)}}"];
+    the_god_of_washing_machines : <f1> -> artem [style = "filled"]
+    artem [shape = Mrecord, label = "{ artem | { <f0> left (nil) | <f1> right (nil)}}"];
+    bashkir : <f1> -> tee_with_milk [style = "filled"]
+    tee_with_milk [shape = Mrecord, label = "{ tee_with_milk | { <f0> left 0x60c000000dc0 | <f1> right 0x60c000000e80}}"];
+    tee_with_milk : <f0> -> tatarin [style = "filled"]
+    tatarin [shape = Mrecord, label = "{ tatarin | { <f0> left (nil) | <f1> right (nil)}}"];
+    tee_with_milk : <f1> -> russian [style = "filled"]
+    russian [shape = Mrecord, label = "{ russian | { <f0> left (nil) | <f1> right (nil)}}"];
+    happy_person : <f1> -> proger [style = "filled"]
+    proger [shape = Mrecord, label = "{ proger | { <f0> left 0x60c000001000 | <f1> right 0x60c0000010c0}}"];
+    proger : <f0> ->  ded [style = "filled"]
+     ded [shape = Mrecord, label = "{  ded | { <f0> left (nil) | <f1> right (nil)}}"];
+    proger : <f1> -> pekus [style = "filled"]
+    pekus [shape = Mrecord, label = "{ pekus | { <f0> left 0x60c000001180 | <f1> right (nil)}}"];
+    pekus : <f0> -> physic [style = "filled"]
+    physic [shape = Mrecord, label = "{ physic | { <f0> left 0x60c000001240 | <f1> right 0x60c000001300}}"];
+    physic : <f0> -> FOPF [style = "filled"]
+    FOPF [shape = Mrecord, label = "{ FOPF | { <f0> left (nil) | <f1> right (nil)}}"];
+    physic : <f1> -> biolog [style = "filled"]
+    biolog [shape = Mrecord, label = "{ biolog | { <f0> left 0x60c0000013c0 | <f1> right 0x60c000001480}}"];
+    biolog : <f0> -> BMochka [style = "filled"]
+    BMochka [shape = Mrecord, label = "{ BMochka | { <f0> left (nil) | <f1> right (nil)}}"];
+    biolog : <f1> -> astronavt [style = "filled"]
+    astronavt [shape = Mrecord, label = "{ astronavt | { <f0> left 0x60c000001540 | <f1> right 0x60c000001600}}"];
+    astronavt : <f0> -> FAKT [style = "filled"]
+    FAKT [shape = Mrecord, label = "{ FAKT | { <f0> left (nil) | <f1> right (nil)}}"];
+    astronavt : <f1> -> RTRTRTRT [style = "filled"]
+    RTRTRTRT [shape = Mrecord, label = "{ RTRTRTRT | { <f0> left (nil) | <f1> right (nil)}}"];
+}
