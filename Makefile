@@ -17,8 +17,8 @@ all: tree clean
 
 #-------------------------------------------------------------------------------------------------------#
 
-tree: Main.o Constructor.o Dump.o GetWord.o ReadTreeFile.o AkinatorPlay.o ScanFile.o
-	g++ Main.o Constructor.o Dump.o GetWord.o ReadTreeFile.o AkinatorPlay.o ScanFile.o $(flags) -o akinator
+tree: Main.o Constructor.o Dump.o GetWord.o ReadTreeFile.o AkinatorPlay.o ScanFile.o Utilits.o
+	g++ Main.o Constructor.o Dump.o GetWord.o ReadTreeFile.o AkinatorPlay.o ScanFile.o Utilits.o $(flags) -o akinator
 
 Main.o: Main.cpp
 	g++ -c $(flags) Main.cpp
@@ -40,6 +40,9 @@ AkinatorPlay.o: AkinatorPlay.cpp
 
 ScanFile.o: ScanFile.cpp
 	g++ -c $(flags) ScanFile.cpp
+
+Utilits.o: Utilits.cpp
+	g++ -c $(flags) Utilits.cpp
 
 #-------------------------------------------------------------------------------------------------------#
 

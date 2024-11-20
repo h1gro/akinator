@@ -32,11 +32,7 @@ int main()
 
     TreeDump(root);
 
-    printf("IF YOU WANT TO PLAY WITH AKINATOR WRITE \"1\", ELSE WRITE \"2\"\n");
-
-    Game(root, root);
-
-    TreeDump(root);
+    PlayMode(root, root);
 
     AkinatorDtor(root, &akin);
     free(akin.buffer);

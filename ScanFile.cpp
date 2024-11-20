@@ -10,7 +10,7 @@ size_t ScanFile(struct file_t* file_struct)
 {
     assert(file_struct->file_ptr);
 
-    printf("\nSCANFILE\n");
+    //printf("%s\n", __func__);
 
     if (CheckFile(file_struct->file_ptr) != -1)
     {
@@ -29,25 +29,15 @@ size_t ScanFile(struct file_t* file_struct)
 
     else
     {
-        return 153153;
+        return SCAN_FILE_POISON;
     }
-}
-
-int CheckFile(FILE* file)
-{
-    if (file == NULL)
-    {
-        printf("file not opened\n");
-        return -1;
-    }
-    return 0;
 }
 
 char* BufferCtor(struct file_t* akin)
 {
     assert(akin);
 
-    printf("\nBUFFER CTOR\n");
+    //printf("%s\n", __func__);
 
     struct stat akin_file = {};
 
@@ -67,7 +57,7 @@ size_t SkipSpacesForPrint(struct file_t* akin, size_t index)
     assert(akin);
     assert(akin->buffer);
 
-    //printf("\nSKIP SPACES\n");
+    //printf("%s\n", __func__);
 
     for (size_t i = index; i < akin->file_size; i++)
     {
@@ -85,7 +75,7 @@ size_t FindNoSpace(struct file_t* akin, size_t index)
     assert(akin);
     assert(akin->buffer);
 
-    printf("\nFIND NO SPACE\n");
+    //printf("%s\n", __func__);
 
     size_t shift = 0;
 
@@ -98,18 +88,4 @@ size_t FindNoSpace(struct file_t* akin, size_t index)
     }
 
     return shift;
-}
-
-void ChangeSymbolInBuffer(struct file_t* buf_struct, size_t size_buffer, char symbol1, char symbol2)
-{
-    assert(buf_struct);
-    assert(size_buffer > 0);
-
-    for (unsigned long int i = 0; i < size_buffer; i++)
-    {
-        if (buf_struct->buffer[i] == symbol1)
-        {
-            buf_struct->buffer[i] = symbol2;
-        }
-    }
 }

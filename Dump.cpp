@@ -1,5 +1,4 @@
 #include <assert.h>
-#include <stdlib.h>
 
 #include "Akinator.h"
 #include "Dump.h"
@@ -14,7 +13,7 @@ void TreeDump(struct node_t* tree)
 
     assert(dump);
 
-    printf("%s\n", __func__);
+    //printf("%s\n", __func__);
     //PrintInorder(tree);
 
     PrintGraphHead(dump);
@@ -61,17 +60,6 @@ void PrintDefaultList(FILE* graph, struct node_t* tree)
         fprintf(graph, "    %4s : <f1> -> %4s [style = \"filled\"]\n", tree->word, tree->right->word);
         PrintDefaultList(graph, tree->right);
     }
-}
-
-void MySystem(const char* str, int number_dump)
-{
-    char* command_dot = (char*) calloc(153, sizeof(char));
-
-    sprintf(command_dot, str, number_dump);
-
-    system(command_dot);
-
-    free(command_dot);
 }
 
 void PrintInorder(struct node_t* node)

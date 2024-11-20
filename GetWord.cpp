@@ -9,8 +9,6 @@ static const char* TREE_FILE = "Tree.txt";
 
 node_t* CreateNode(struct node_t* parent, const char* word)
 {
-    printf("\nCREATE SUBTREE\n");
-
     node_t* new_node = (node_t*) calloc(1, sizeof(node_t));
 
     assert(new_node);
@@ -20,66 +18,16 @@ node_t* CreateNode(struct node_t* parent, const char* word)
     new_node->left  = NULL;
     new_node->right = NULL;
 
-    //akin->node_number += 1;
-
     new_node->parent = parent;
 
     return new_node;
 }
 
-int GuessWord(struct node_t* node, struct node_t* root)
-{
-    assert(node);
-
-    printf("%s\n", node->word);
-
-    char* answer = (char*) calloc(10, sizeof(char));
-
-    scanf("%s", answer);
-
-    if (strcmp(answer, "no") == 0)
-    {
-        if (node->right == NULL)
-        {
-            printf("\nTHAT WAS ALL THAT I KNOW\n\n"
-                   "IF YOU WANT TO ADD NEW ANSWER WRITE: 1, ELSE WRITE: 2\n");
-
-            IfAddAnswer(node, root);
-            free(answer);
-            return 0;
-        }
-        else
-        {
-            GuessWord(node->right, root);
-        }
-    }
-
-    else if (strcmp(answer, "yes") == 0)
-    {
-        if (node->left == NULL)
-        {
-            printf("IT WAS OBVIOSLY!\n");
-            free(answer);
-            return 0;
-        }
-        else
-        {
-            GuessWord(node->left, root);
-        }
-    }
-
-    else
-    {
-        printf("NOT ANSWER, WRITE YES OR NO!\n");
-        GuessWord(node, root);
-    }
-
-    free(answer);
-    return 0;
-}
-
 void CreateNewAnswer(struct node_t* node, struct node_t* root)
 {
+    assert(node);
+    assert(root);
+
     FILE* file_ptr = fopen(TREE_FILE, "w+");
 
     assert(file_ptr);
@@ -109,6 +57,9 @@ void CreateNewAnswer(struct node_t* node, struct node_t* root)
 
 void RewriteTree(struct node_t* node, FILE* file_ptr)
 {
+    assert(node);
+    assert(file_ptr);
+
     fprintf(file_ptr, "{\"%s\"", node->word);
 
     if (node->left != NULL)
@@ -126,6 +77,9 @@ void RewriteTree(struct node_t* node, FILE* file_ptr)
 
 void IfAddAnswer(struct node_t* node, struct node_t* root)
 {
+    assert(node);
+    assert(root);
+
     int command = 0;
 
     scanf("%d", &command);
